@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PillPilot - Medicine Inventory Management</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>PillPilot</h1>
+                        <span class="tagline">Medicine Inventory Management</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section">
+            <div class="upload-card">
+                <h2><i class="fas fa-upload"></i> Upload Inventory Data</h2>
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag and drop your CSV file here or click to browse</p>
+                    <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                    <button class="upload-btn" onclick="document.getElementById('csvFile').click()">
+                        Choose File
+                    </button>
+                </div>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <p id="fileName"></p>
+                    <p id="fileStats"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <section class="dashboard" id="dashboard">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalQuantity">0</h3>
+                        <p>Total Quantity</p>
+                    </div>
+                </div>
+                <div class="stat-card expired">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="expiredCount">0</h3>
+                        <p>Expired Items</p>
+                    </div>
+                </div>
+                <div class="stat-card out-of-stock">
+                    <div class="stat-icon">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="outOfStockCount">0</h3>
+                        <p>Out of Stock</p>
+                    </div>
+                </div>
+                <div class="stat-card expiring">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="expiringSoonCount">0</h3>
+                        <p>Expiring Soon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine Learning Section -->
+            <div class="ml-section">
+                <h3><i class="fas fa-brain"></i> AI-Powered Analytics</h3>
+                <p class="ml-subtitle">Advanced machine learning for demand forecasting and optimization</p>
+                
+                <div class="ml-controls">
+                    <button class="ml-button train-btn" id="trainModelsBtn">
+                        <i class="fas fa-graduation-cap"></i> Train ML Models
+                    </button>
+                    <button class="ml-button forecast-btn" id="demandForecastBtn">
+                        <i class="fas fa-crystal-ball"></i> Demand Forecast
+                    </button>
+                    <button class="ml-button optimization-btn" id="mlTransferBtn">
+                        <i class="fas fa-route"></i> ML Transfer Optimization
+                    </button>
+                    <button class="ml-button analysis-btn" id="riskAnalysisBtn">
+                        <i class="fas fa-chart-line"></i> Risk Analysis
+                    </button>
+                </div>
+                
+                <div class="ml-status" id="mlStatus">
+                    <div class="status-indicator" id="mlStatusIndicator">
+                        <i class="fas fa-circle"></i> <span id="mlStatusText">Checking ML status...</span>
+                    </div>
+                </div>
+                
+            <div class="ml-results" id="mlResults"></div>
+        </div>
+
+        <!-- Navigation Cards Section -->
+        <div class="navigation-section">
+            <h3><i class="fas fa-compass"></i> Navigate to</h3>
+            <div class="navigation-grid">
+                <a class="nav-card" href="{{ url_for('transfer') }}">
+                    <div class="nav-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h4>Medicine Search & Transfers</h4>
+                    <p>Search specific medicines and get detailed transfer recommendations by product</p>
+                    <div class="nav-button">Go to Transfers</div>
+                </a>
+                <a class="nav-card" href="{{ url_for('analytics') }}">
+                    <div class="nav-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Analytics Dashboard</h4>
+                    <p>View comprehensive charts, risk analysis, and inventory insights</p>
+                    <div class="nav-button">View Analytics</div>
+                </a>
+            </div>
+        </div>
+
+
+
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

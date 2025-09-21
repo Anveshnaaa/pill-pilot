@@ -1,0 +1,16 @@
+Store,Medicine,Quantity,ExpiryDate,LastUpdated
+Store1,MedicineA,50,2025-12-31,2025-01-15
+Store1,MedicineB,0,2025-06-30,2025-01-15
+Store1,MedicineC,25,2025-03-15,2025-01-15
+Store2,MedicineA,30,2025-11-20,2025-01-15
+Store2,MedicineB,15,2025-08-15,2025-01-15
+Store2,MedicineC,0,2025-05-10,2025-01-15
+Store3,MedicineA,40,2025-10-05,2025-01-15
+Store3,MedicineB,20,2025-07-25,2025-01-15
+Store3,MedicineC,35,2025-09-30,2025-01-15
+Store4,MedicineA,0,2025-04-20,2025-01-15
+Store4,MedicineB,45,2025-12-10,2025-01-15
+Store4,MedicineC,10,2025-02-28,2025-01-15
+Store5,MedicineA,60,2025-11-15,2025-01-15
+Store5,MedicineB,5,2025-01-10,2025-01-15
+Store5,MedicineC,0,2025-06-05,2025-01-15

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Suggestions - PillPilot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>PillPilot</h1>
+                        <span class="tagline">Medicine Inventory Management</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Transfer Page -->
+        <div class="page-section">
+            <div class="page-header">
+                <a href="{{ url_for('index') }}" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <h2><i class="fas fa-exchange-alt"></i> Transfer Suggestions</h2>
+                <p>Intelligent recommendations to optimize stock distribution</p>
+            </div>
+            
+            <!-- All Transfer Suggestions Section -->
+            <div class="suggestions-section">
+                <h3><i class="fas fa-list"></i> All Transfer Recommendations</h3>
+                <p class="suggestions-subtitle">Complete list of intelligent transfer suggestions across all stores</p>
+                
+                <div id="allSuggestionsContainer">
+                    <div class="suggestions-loading" id="allSuggestionsLoading">
+                        <div class="loading"></div>
+                        <span>Loading transfer suggestions...</span>
+                    </div>
+                    
+                    <div class="suggestions-list" id="allSuggestionsDisplay" style="display: none;">
+                        <!-- All suggestions will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Search Section -->
+            <div class="search-section">
+                <h3><i class="fas fa-search"></i> Search by Medicine</h3>
+                <p class="search-subtitle">Find specific transfer recommendations for individual medicines</p>
+                
+                <div class="search-container">
+                    <input type="text" id="medicineSearch" placeholder="Search for a medicine..." class="search-input">
+                    <button id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="search-results" id="medicineResults"></div>
+            </div>
+            
+            <div class="transfer-results" id="transferResults" style="display: none;">
+                <h3><i class="fas fa-truck"></i> Medicine-Specific Recommendations</h3>
+                <div id="selectedMedicineInfo"></div>
+                <div id="transferSuggestions"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Load transfer suggestions when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllTransferSuggestions();
+            setupTransferSearch();
+        });
+    </script>
+</body>
+</html>
