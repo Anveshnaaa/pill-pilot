@@ -1,8 +1,5 @@
 PillPilot - AI-Powered Medicine Inventory Management System
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Overview
 Pill Pilot isn’t just another inventory management tool. Like most systems, it can track stock levels and provide clean dashboards. But what makes it different is the ability to go further — using AI to forecast demand and recommend store-to-store transfers. Instead of letting medicines expire in one location while another runs out, Pill Pilot balances inventory across pharmacies to reduce waste and ensure availability. The current test dataset covers 50 stores, but I have stress-tested the system up to 1,000 stores, demonstrating its ability to scale to much larger networks.
@@ -17,7 +14,7 @@ cd pill-pilot
 python3 run.py
 ```
 The script will install everything and start the server automatically!
-Then open http://localhost:5001 in your browser!
+Then open http://localhost:5001 in your browser
 
 
 Key Features
@@ -36,12 +33,14 @@ Key Features
 
 Tech Stack
 
+
 Backend → Python, Flask
 Data/ML → Pandas, NumPy, Scikit-learn
 Frontend → HTML, CSS, JavaScript, Plotly
 Storage → CSV (extendable to SQL/NoSQL)
 
 Sample Usage
+
 
 Upload a CSV file with store inventory.
 See live dashboards showing current stock + expiry alerts.
@@ -58,7 +57,7 @@ The system includes pre-trained models for:
 
 
 
-## 🏗️ Project Structure
+ Project Structure
 
 ```
 pillpilot-inventory-management/
