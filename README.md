@@ -1,101 +1,62 @@
-# 🏥 PillPilot - AI-Powered Medicine Inventory Management System
+PillPilot - AI-Powered Medicine Inventory Management System
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## 🚀 Overview
+Overview
+Pill Pilot isn’t just another inventory management tool. Like most systems, it can track stock levels and provide clean dashboards. But what makes it different is the ability to go further — using AI to forecast demand and recommend store-to-store transfers. Instead of letting medicines expire in one location while another runs out, Pill Pilot balances inventory across pharmacies to reduce waste and ensure availability. The current test dataset covers 50 stores, but I have stress-tested the system up to 1,000 stores, demonstrating its ability to scale to much larger networks.
 
-PillPilot is an intelligent medicine inventory management system that leverages machine learning to optimize pharmaceutical supply chains. The system provides real-time inventory tracking, demand forecasting, and automated transfer recommendations to minimize waste and prevent stockouts.
 
-## ✨ Key Features
+Quick Start
 
-### 🤖 AI-Powered Analytics
-- **Demand Forecasting**: ML models predict future demand with 95%+ accuracy
-- **Stockout Risk Analysis**: Advanced algorithms identify potential stockouts
-- **Transfer Optimization**: AI suggests optimal medicine transfers between stores
-- **Risk Matrix Visualization**: Heatmaps showing risk distribution across regions
 
-### 📊 Real-Time Dashboard
-- **Live Inventory Tracking**: Monitor stock levels across multiple stores
-- **Expiry Management**: Track medicines approaching expiration
-- **Performance Metrics**: Comprehensive analytics and reporting
-- **Interactive Charts**: Dynamic visualizations using Plotly
+```bash
+git clone https://github.com/Anveshnaaa/pill-pilot.git
+cd pill-pilot
+python3 run.py
+```
+The script will install everything and start the server automatically!
+Then open http://localhost:5001 in your browser!
 
-### 🔄 Smart Transfer System
-- **Intelligent Recommendations**: AI-driven transfer suggestions
-- **Cost Optimization**: Minimize transfer costs while maximizing impact
-- **Urgency Scoring**: Prioritize transfers based on risk and demand
-- **Geographic Analysis**: Consider store locations and delivery times
 
-## 🛠️ Technology Stack
+Key Features
 
-- **Backend**: Python 3.8+, Flask 3.0.0
-- **Data Processing**: Pandas, NumPy
-- **Machine Learning**: Scikit-learn, SciPy
-- **Visualization**: Plotly, Interactive Charts
-- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
-- **Data Storage**: CSV-based (easily extensible to databases)
 
-## 📈 Machine Learning Models
+1.Smart Transfer System(MOST IMPORTANT)
+- Intelligent Recommendations: AI-driven transfer suggestions
+- Cost Optimization: Minimize transfer costs while maximizing impact
+- Urgency Scoring: Prioritize transfers based on risk and demand
+- Geographic Analysis: Consider store locations and delivery time
+
+2. Demand Forecasting → Predicts medicine usage trends.
+3. Stockout Risk Analysis → Highlights where shortages may happen.
+4. Expiry Tracking → Flags medicines nearing expiration.
+5. Interactive Dashboard → Live charts powered by Plotly.
+
+Tech Stack
+
+Backend → Python, Flask
+Data/ML → Pandas, NumPy, Scikit-learn
+Frontend → HTML, CSS, JavaScript, Plotly
+Storage → CSV (extendable to SQL/NoSQL)
+
+Sample Usage
+
+Upload a CSV file with store inventory.
+See live dashboards showing current stock + expiry alerts.
+Run demand forecasting for the next 7–14 days.
+View transfer suggestions to balance supply across stores.
+
+Machine Learning Models
 
 The system includes pre-trained models for:
-- **Time Series Forecasting**: ARIMA, Exponential Smoothing
-- **Demand Prediction**: Linear Regression, Random Forest
-- **Risk Assessment**: Classification models for stockout prediction
-- **Transfer Optimization**: Clustering and optimization algorithms
+- Time Series Forecasting: ARIMA, Exponential Smoothing
+- Demand Prediction: Linear Regression, Random Forest
+- Risk Assessment: Classification models for stockout prediction
+- Transfer Optimization: Clustering and optimization algorithms
 
-## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package installer)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/pillpilot-inventory-management.git
-   cd pillpilot-inventory-management
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application**
-   ```bash
-   python3 app.py
-   ```
-
-4. **Access the dashboard**
-   - Open your browser and go to `http://localhost:5001`
-   - Upload the sample CSV file to see the system in action
-
-### Sample Data
-The repository includes `sample_inventory.csv` with sample data for testing.
-
-## 📊 Usage
-
-### 1. Upload Inventory Data
-- Upload CSV files with columns: Store, Medicine, Quantity, ExpiryDate, LastUpdated
-- The system automatically processes and categorizes your data
-
-### 2. View Dashboard
-- Monitor real-time inventory statistics
-- Track expired and expiring medicines
-- View stock levels across all stores
-
-### 3. AI Analytics
-- Train ML models on your data
-- Get demand forecasts for the next 7-14 days
-- Analyze stockout risks by category and region
-
-### 4. Transfer Management
-- View AI-optimized transfer suggestions
-- Filter by urgency, medicine, or store
-- Implement transfers to optimize inventory distribution
 
 ## 🏗️ Project Structure
 
@@ -118,74 +79,23 @@ pillpilot-inventory-management/
 │   └── demand_models.pkl          # Serialized models
 └── README.md                      # This file
 ```
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 29 37 AM" src="https://github.com/user-attachments/assets/a9851949-672a-4ae0-b4d5-8d2cd39829e8" />
 
-## 🔧 API Endpoints
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 29 48 AM" src="https://github.com/user-attachments/assets/246f0f8f-7d01-4d1c-a6fa-f617957344dc" />
 
-### Core Endpoints
-- `GET /` - Main dashboard
-- `POST /api/upload-csv` - Upload inventory data
-- `GET /api/inventory-summary` - Get inventory statistics
-- `GET /api/stock-levels` - Get detailed stock levels
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 30 28 AM" src="https://github.com/user-attachments/assets/24421890-b17e-47cc-bd54-ae787aa55257" />
 
-### Analytics Endpoints
-- `GET /api/charts/stock-by-store` - Store-wise stock visualization
-- `GET /api/charts/medicine-distribution` - Medicine distribution pie chart
-- `GET /api/charts/stock-status` - Stock status breakdown
-- `GET /api/risk-matrix-heatmap` - Risk analysis heatmap
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 31 24 AM" src="https://github.com/user-attachments/assets/56c2448b-5cdb-42bc-8e0f-9dcb3a063ca3" />
 
-### ML Endpoints
-- `POST /api/ml/train-models` - Train ML models
-- `GET /api/ml/demand-forecast` - Get demand predictions
-- `GET /api/ml/transfer-optimization` - Get ML transfer suggestions
-- `GET /api/ml/stockout-risk-analysis` - Advanced risk analysis
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 31 28 AM" src="https://github.com/user-attachments/assets/26b639d1-93dc-4e57-8a42-866abc60be30" />
 
-## 📈 Performance Metrics
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 31 35 AM" src="https://github.com/user-attachments/assets/dbd48e9f-1f96-4cf9-bb39-ef912a929977" />
 
-- **Model Accuracy**: 95%+ for demand forecasting
-- **Processing Speed**: Handles 10,000+ inventory records in <2 seconds
-- **Real-time Updates**: Dashboard updates instantly with new data
-- **Scalability**: Supports multiple stores and unlimited medicines
+<img width="1440" height="857" alt="Screenshot 2025-09-21 at 12 31 39 AM" src="https://github.com/user-attachments/assets/3d5fad6c-f278-49ae-a1a1-d4574cd4744d" />
 
-## 🎯 Business Impact
 
-- **Reduced Waste**: 30% reduction in expired medicines
-- **Improved Availability**: 25% fewer stockouts
-- **Cost Savings**: 20% reduction in transfer costs
-- **Time Efficiency**: 80% faster inventory management
 
-## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
-## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- Built with Flask and Python
-- ML models powered by Scikit-learn
-- Visualizations created with Plotly
-- Inspired by real-world pharmaceutical supply chain challenges
-
-## 📞 Support
-
-If you have any questions or need help, please:
-1. Check the [Issues](https://github.com/yourusername/pillpilot-inventory-management/issues) page
-2. Create a new issue if your problem isn't already reported
-3. Contact me directly at your.email@example.com
-
----
-
-⭐ **Star this repository if you found it helpful!**
