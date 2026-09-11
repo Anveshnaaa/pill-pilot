@@ -2,7 +2,7 @@ PillPilot - AI-Powered Medicine Inventory Management System
 
 
 Overview
-Pill Pilot isn’t just another inventory management tool. Like most systems, it can track stock levels and provide clean dashboards. But what makes it different is the ability to go further — using AI to forecast demand and recommend store-to-store transfers. Instead of letting medicines expire in one location while another runs out, Pill Pilot balances inventory across pharmacies to reduce waste and ensure availability. The current test dataset covers 50 stores, but I have stress-tested the system up to 1,000 stores, demonstrating its ability to scale to much larger networks.
+Pill Pilot isn’t just another inventory management tool. Like most systems, it can track stock levels and provide clean dashboards. But what makes it different is the ability to go further using AI to forecast demand and recommend store-to-store transfers. Instead of letting medicines expire in one location while another runs out, Pill Pilot balances inventory across pharmacies to reduce waste and ensure availability. The current test dataset covers 50 stores, but I have stress-tested the system up to 1,000 stores, demonstrating its ability to scale to much larger networks.
 
 
 Quick Start
